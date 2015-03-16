@@ -14,6 +14,7 @@
 		240EE4071AB669FE00FEDB33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240EE4061AB669FE00FEDB33 /* Images.xcassets */; };
 		240EE40A1AB669FE00FEDB33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240EE4081AB669FE00FEDB33 /* LaunchScreen.xib */; };
 		240EE4161AB669FE00FEDB33 /* lockotron_3000Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EE4151AB669FE00FEDB33 /* lockotron_3000Tests.swift */; };
+		240EE4201AB66C6A00FEDB33 /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240EE41F1AB66C6A00FEDB33 /* MotionKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		240EE40F1AB669FE00FEDB33 /* lockotron 3000Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lockotron 3000Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		240EE4141AB669FE00FEDB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		240EE4151AB669FE00FEDB33 /* lockotron_3000Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockotron_3000Tests.swift; sourceTree = "<group>"; };
+		240EE41F1AB66C6A00FEDB33 /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				240EE3FC1AB669FE00FEDB33 /* AppDelegate.swift */,
+				240EE41F1AB66C6A00FEDB33 /* MotionKit.swift */,
 				240EE4011AB669FE00FEDB33 /* ViewController.swift */,
 				240EE4031AB669FE00FEDB33 /* Main.storyboard */,
 				240EE4061AB669FE00FEDB33 /* Images.xcassets */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240EE4201AB66C6A00FEDB33 /* MotionKit.swift in Sources */,
 				240EE4021AB669FE00FEDB33 /* ViewController.swift in Sources */,
 				240EE4001AB669FE00FEDB33 /* lockotron_3000.xcdatamodeld in Sources */,
 				240EE3FD1AB669FE00FEDB33 /* AppDelegate.swift in Sources */,
