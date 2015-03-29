@@ -20,25 +20,33 @@ class ViewController: UIViewController {
     
     let motionKit = MotionKit()
     var swichatron4000 = false
-    var bumped = false
+    
+    var bumpStart = false
+    var bumpEnd = false
+
+    var bumpcount = 0
+    
+    @IBOutlet var bumpCountLabel: UILabel!
+    
+    
     
     @IBAction func myButtonPress(sender: AnyObject) {
     
         if (swichatron4000) {
-            myLabel.text="thanks for squishing me"
+            myLabel.text="Beep"
         } else{
-            myLabel.text="phew"
+            myLabel.text="Boop"
         }
         
         swichatron4000 = !swichatron4000
-        bumped = false
+        bumpStart = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        motionKit.getDeviceMotionObject(interval: 0.1){
+        motionKit.getDeviceMotionObject(interval: 0.05){
             (deviceMotion) -> () in
 
             let accelNum =
@@ -49,8 +57,21 @@ class ViewController: UIViewController {
     
             let accel = String(format:"%0.5f", accelNum)
             
-            if (accelNum > 0.12) {
-                self.bumped = true
+            // detect the start of a bump
+            if (self.bumpStart == false &&
+                self.bumpEnd == false &&
+                accelNum > 0.12) {
+                    
+                self.bumpStart = true
+           
+            }
+            
+            // Now detect for the end of a bump
+            if (self.bumpStart == true &&
+                self.bumpEnd == false &&
+                accelNum <= 0.03) {
+                    
+                self.bumpEnd = true
             }
             
             
@@ -58,8 +79,20 @@ class ViewController: UIViewController {
                 // now update UI on main thread
                 self.myBumpDetector.text = "Accel is: " + accel
                 
-                if (self.bumped) {
+                if (self.bumpStart == true &&
+                    self.bumpEnd == true) {
                     self.myLabel.text = "I got bumped"
+    
+                    self.bumpcount = self.bumpcount + 1
+                    
+                    
+                
+                    self.bumpCountLabel.text = String(self.bumpcount)
+                    
+                    self.bumpStart = false
+                    self.bumpEnd = false
+                        
+                    
                 }
                 
             }
